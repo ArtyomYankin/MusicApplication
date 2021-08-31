@@ -1,0 +1,12 @@
+.card-img-top {
+    position: relative;
+    width: auto;
+    height: auto;
+}
+.card {
+    width: 200px;
+    height: 330px;
+    border-style: groove;
+    border-width: 5px;
+    margin: 20px;
+}

@@ -1,0 +1,10 @@
+.figure {
+    height: auto;
+    width: auto;
+}
+h2 {
+    font-size: large;  
+}
+.artist-img {
+    align-items: center;
+}

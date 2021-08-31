@@ -1,0 +1,13 @@
+﻿<div *ngIf="loaded">
+    <div class="container">
+    <h2>Name: {{artist.name}}</h2>
+    <div>
+        <p><b>Listeners:</b> {{artist.listeners}}</p>
+        <figure class="figure">
+            <img src="{{artist.image}}" alt="" class="artist-img"/>
+        </figure>
+        <p>Biography: {{artist.biography}}</p>
+        <p><a routerLink="/" class="nav-link">Back to top.</a></p>
+    </div>
+</div>
+</div>
