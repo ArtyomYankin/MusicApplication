@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MA_Repository
 {
-    public class Repository<T> : IRepository<T> where T : BaseEntity
+    public class Repository<T> : IDisposable, IRepository<T> where T : BaseEntity
     {
         private readonly ApplicationContext _context;
         private readonly DbSet<T> _entity;
@@ -21,7 +21,14 @@ namespace MA_Repository
 
         public void Add(T entities)
         {
-            _entity.Add(entities);
+            try
+            {
+                _entity.Add(entities);
+            }
+            catch (Exception e)
+            { 
+                Console.WriteLine(e); 
+            }
             _context.SaveChanges();
         }
 
@@ -29,13 +36,18 @@ namespace MA_Repository
         {
             try
             {
-                _entity.AddRange(entities);
+                _context.AddRange(entities);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
             }
             _context.SaveChanges(); 
+        }
+
+        public void Dispose()
+        {
+
         }
 
         public T Get(int id)

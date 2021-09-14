@@ -9,7 +9,7 @@
     public class Album : BaseEntity
     {
         public string Name { get; set; }
-        public string ImageUrl { get; set; }
+       // public string ImageUrl { get; set; }
         public int Playcount { get; set; }
         public int ArtistId { get; set; }
     }

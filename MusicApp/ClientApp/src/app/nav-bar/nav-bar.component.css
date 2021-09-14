@@ -2,7 +2,13 @@
     border: 3px;
     border-style: double;
     border-color: black;
+    height: 100px;
 }
 .navbar-brand {
     margin-left: 40px;
+    margin-top: 20px;
+    color: blueviolet;
+}
+.navbar-default{
+    background-color: bisque;
 }

@@ -12,6 +12,6 @@
         public string ImageUrl { get; set;}
         public string Biography { get; set; }
         public int Listeners { get; set; }
-        public List<Album> Albums { get; set; }
+        public IEnumerable<Album> Albums { get; set; }
     }
 }

@@ -2,16 +2,12 @@
 {
     using MA_Data;
     using MA_Repository;
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class ArtistService : IArtistService
     {
         private readonly IRepository<Artist> _artistRepository;
-        public ArtistService (IRepository<Artist> artistRepository)
+        public ArtistService(IRepository<Artist> artistRepository)
         {
             _artistRepository = artistRepository;
         }

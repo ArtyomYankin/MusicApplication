@@ -6,17 +6,14 @@
     using MA_Service.Models;
     using Newtonsoft.Json;
     using RestSharp;
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
 
     public class LastFmAlbumService : ILastFmAlbumService
     {
         private readonly IRepository<Album> _albumRepository;
         private readonly IMapper _mapper;
-        public LastFmAlbumService (IRepository<Album> albumRepository, IMapper mapper)
+        public LastFmAlbumService(IRepository<Album> albumRepository, IMapper mapper)
         {
             _albumRepository = albumRepository;
             _mapper = mapper;
@@ -36,18 +33,18 @@
             return null;
         }
 
-        public async Task<Album> MapAlbums(string key, string artistName, int artistId)
+        public async Task<IEnumerable<Album>> MapAlbums(string key, string artistName, int artistId)
         {
             IEnumerable<LastFmTopAlbum> lastFmTopAlbums = await GetAlbumsAsync(key, artistName, artistId);
             IEnumerable<Album> albums = _mapper.Map<IEnumerable<Album>>(lastFmTopAlbums);
-            int i = 1;
+
             foreach (var item in albums)
             {
 
-                item.Id = i;
                 item.ArtistId = artistId;
-                i++;
+
             }
+            
             _albumRepository.AddAll(albums);
             return null;
         }

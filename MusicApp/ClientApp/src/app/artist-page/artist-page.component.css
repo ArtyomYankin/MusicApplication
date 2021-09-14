@@ -8,3 +8,12 @@ h2 {
 .artist-img {
     align-items: center;
 }
+.artist-name{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: oblique;
+}
+.artist-biography{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    font-size: medium;
+}

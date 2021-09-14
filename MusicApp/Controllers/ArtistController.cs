@@ -36,10 +36,10 @@ namespace MusicApp.Controllers
         }
 
         [HttpGet("{id}")]
-        public Artist Get(int id)
+        public async Task<Artist> Get(int id)
         {
             Artist artist = _artistService.Get(id);
-            _lastFmAlbumService.MapAlbums(lastFmApiKey, artist.Name, artist.Id);
+            await _lastFmAlbumService.MapAlbums(lastFmApiKey, artist.Name, artist.Id);
             return artist;
         }
         public async Task<IActionResult> GetArtistAsync()
