@@ -32,6 +32,10 @@ namespace MusicApp.Controllers
             {
                 await GetArtistAsync();
             }
+            //foreach (var item in artists)
+            //{
+            //    await _lastFmAlbumService.MapAlbums(lastFmApiKey, item.Name, item.Id);
+            //}
             return artists;
         }
 
@@ -39,7 +43,7 @@ namespace MusicApp.Controllers
         public async Task<Artist> Get(int id)
         {
             Artist artist = _artistService.Get(id);
-            await _lastFmAlbumService.MapAlbums(lastFmApiKey, artist.Name, artist.Id);
+           await _lastFmAlbumService.MapAlbums(lastFmApiKey, artist.Name, artist.Id);
             return artist;
         }
         public async Task<IActionResult> GetArtistAsync()

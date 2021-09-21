@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { DataService } from "../data.service";
 import { Artist } from "../artist";
+
 @Component({
   templateUrl: "./artist-page.component.html",
   providers: [DataService],

@@ -1,11 +1,13 @@
 ﻿<div *ngIf="loaded">
     <div class="container">
     <h1 class="artist-name">{{artist.name}}</h1>
-    <div>
+    <div> <p></p>
+      
         <p><b>Listeners:</b> {{artist.listeners}}</p>
         <figure class="figure">
             <img src="{{artist.image}}" alt="" class="artist-img"/>
         </figure>
+        <a routerLink="http://localhost:5000/album/{{artist.id}}" class="nav-link">Albums</a>
         <p class="artist-biography">Biography: {{artist.biography}}</p>
         <p><a routerLink="/" class="nav-link">Back to top.</a></p>
     </div>

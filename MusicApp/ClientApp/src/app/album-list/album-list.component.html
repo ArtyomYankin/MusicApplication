@@ -1,0 +1,13 @@
+<h1 class="top-albums">Albums:</h1>
+<div class="table-top">
+    <form *ngFor="let p of albums">
+        <div class="table">
+            <ng-template [ngIf]="album?.artistId != p.artistId">
+                <div class="table-body">
+                    <p>{{p?.name}}</p>
+                    <p>Playcount: {{p?.playcount}}</p>
+                </div>
+            </ng-template>
+        </div>  
+    </form>
+</div>

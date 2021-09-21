@@ -59,5 +59,6 @@ namespace MA_Repository
         {
             return _entity.AsEnumerable();
         }
+
     }
 }

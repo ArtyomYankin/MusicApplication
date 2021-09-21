@@ -1,6 +1,8 @@
 using AutoMapper;
+using MA_Data;
 using MA_Repository;
 using MA_Service;
+using MA_Service.AlbumService;
 using MA_Service.ArtistService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,9 +32,11 @@ namespace MusicApp
                 configuration.RootPath = "ClientApp/dist";
             });
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped(typeof(IAlbumRepository<>), typeof(AlbumRepository<>));
             services.AddScoped<ILastFmArtistService, LastFmArtistService>();
             services.AddScoped<ILastFmAlbumService, LastFmAlbumService>();
             services.AddScoped<IArtistService, ArtistService>();
+            services.AddScoped<IAlbumService, AlbumService>();
             var mappingConfig = new MapperConfiguration(mc => { mc.AddProfile(new MappingProfile());
             });
             IMapper mapper = mappingConfig.CreateMapper();
